@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">languageChangeableDemo</string>
+    <string name="languageSwitching">languageSwitching</string>
+    <string name="Hello">Hello World!</string>
+    <string name="explain">Default implementation Textview and Button,
+        direct use TextView2 or Button2 that will do， other controls need to be implemented LangChangableView interface，
+        Internal Method for Copying TextView2 you can do that .it must be used before in Application initialization with CLang.init(this);
+        It can also be used in designated language environments. CLang.init(this, Locale.CHINA);when initialization requires language modification CLang.swithLang(context);that will do，
+        Language environment will be used SharedPreferences store it locally</string>
+</resources>

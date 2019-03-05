@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">语言可更改演示</string>
+    <string name="languageSwitching">语言切换</string>
+    <string name="Hello">世界你好！</string>
+    <string name="explain">默认实现了Textview和Button,
+        直接使用TextView2或Button2即可， 其他控件需要实现LangChangableView 接口，
+        内部方法实现拷贝TextView2中的即可 使用前必须在Application中初始化 CLang.init(this);
+        亦可指定语言环境使用 CLang.init(this, Locale.CHINA);初始化 需要修改语言的时候CLang.swithLang(context);即可，
+        语言环境会使用SharedPreferences存储到本地</string>
+</resources>

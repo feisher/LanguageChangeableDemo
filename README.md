@@ -1,5 +1,5 @@
 # LanguageChangeableDemo
-### 多语言国际化支持库，暂只支持中英文切换，简单易用，无额外其他库依赖，修改可本地存储固化，
+### 多语言国际化支持库，暂只支持中英文切换，简单易用，无额外其他库依赖，修改可本地存储固化，无需重启
 
 ## 集成方式
 
@@ -37,6 +37,8 @@ CLang.init(this, Locale.CHINA);
 CLang.swithLang(context);
 ```
 即可，语言环境会使用`SharedPreferences`存储到本地
+
+![演示图](https://github.com/feisher/LanguageChangeableDemo/blob/master/device-2019-03-05-105142.gif?raw=true)
 
 ## PS:注意事项
 

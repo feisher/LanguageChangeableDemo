@@ -1,6 +1,27 @@
 # LanguageChangeableDemo
 ### 多语言国际化支持库，暂只支持中英文切换，简单易用，无额外其他库依赖，修改可本地存储固化，
 
+## 集成方式
+
+[![](https://jitpack.io/v/feisher/LanguageChangeableDemo.svg)](https://jitpack.io/#feisher/LanguageChangeableDemo)
+
+#### 1.在你的项目根目录 build.gradle 结尾添加(Add it in your root build.gradle at the end of repositories):
+```groovy
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+#### 2. 在modle的gradle中添加依赖
+```groovy
+dependencies {
+	        implementation 'com.github.feisher:LanguageChangeableDemo:1.0.0'
+    		//注意上面jitpack版本号，
+	}
+```
+
 默认实现了`Textview`和`Button`,直接使用`TextView2`或`Button2`即可， 其他控件需要实现`LangChangableView` 接口，
 
 内部方法实现拷贝`TextView2`中的即可 使用前必须在`Application`中初始化

@@ -1,6 +1,7 @@
 # LanguageChangeableDemo
 ### 多语言国际化支持库，暂只支持中英文切换，简单易用，无额外其他库依赖，修改可本地存储固化，无需重启
 
+
 ## 集成方式
 
 [![](https://jitpack.io/v/feisher/LanguageChangeableDemo.svg)](https://jitpack.io/#feisher/LanguageChangeableDemo)
@@ -21,6 +22,38 @@ dependencies {
     		//注意上面jitpack版本号，
 	}
 ```
+## 1.1.0版本发布，，采用完全和1.0.0不同的方案，抛弃需要重写控件的限制，如下
+```继承方式同上，版本号为1.1.0```
+####1.使用前必须在`Application`中初始化
+```java
+public class App extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        CLang.init(this);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        CLang.swithLang(this);//这里为1.1.0版本新增处理方式，，兼容安卓8.0以上系统
+    }
+}
+```
+#### 2.调用方式
+```java
+findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CLang.swithLang(MainActivity.this);//注意这里要传activity，否则8.0以上会失效
+                MainActivity.this.recreate();//这句代码很有必要,如设置页面从其他页面跳转则需要再onActivtyRsult中recreate();
+                //针对组件化使用Router框架的：如设置页面有接受传入数据，需要自行处理重新加载逻辑
+            }
+        });
+```
+
+
+
+## 以下为1.0版本使用方式和介绍，，上方为1.1版本使用方式介绍
 
 默认实现了`Textview`和`Button`,直接使用`TextView2`或`Button2`即可， 其他控件需要实现`LangChangableView` 接口，
 

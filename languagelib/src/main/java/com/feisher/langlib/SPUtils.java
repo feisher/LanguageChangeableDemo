@@ -1,8 +1,8 @@
-package com.feisher.langlib.util;
+package com.feisher.langlib;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
+
 import android.util.Log;
 
 import java.io.ByteArrayInputStream;
@@ -38,7 +38,7 @@ public class SPUtils {
      * @param value 值
      * @param <E>   泛型，自动根据值进行处理
      */
-    public static <E> void put(@NonNull String key, @NonNull E value) {
+    public static <E> void put( String key,  E value) {
         put(mContext, key, value);
 
     }
@@ -51,7 +51,7 @@ public class SPUtils {
      * @param <E>          泛型，自动根据值进行处理
      * @return
      */
-    public static <E> E get(@NonNull String key, @NonNull E defaultValue) {
+    public static <E> E get( String key,  E defaultValue) {
         return get(mContext, key, defaultValue);
     }
 
@@ -63,7 +63,7 @@ public class SPUtils {
      * @param value
      * @return
      */
-    public static <E> void put(Context context, @NonNull String key, @NonNull E value) {
+    public static <E> void put(Context context,  String key,  E value) {
         SharedPreferences.Editor editor = init(context).edit();
         if (value instanceof String || value instanceof Integer || value instanceof Boolean ||
                 value instanceof Float || value instanceof Long || value instanceof Double) {
@@ -86,7 +86,7 @@ public class SPUtils {
      * @param defaultValue
      * @return
      */
-    public static <E> E get(Context context, @NonNull String key, @NonNull E defaultValue) {
+    public static <E> E get(Context context,  String key,  E defaultValue) {
         String value = init(context).getString(key, String.valueOf(defaultValue));
         if (defaultValue instanceof String) {
             return (E) value;
@@ -233,7 +233,7 @@ public class SPUtils {
      * @return
      * @throws IOException
      */
-    private static  <E>String serialize( @NonNull E object) throws IOException {
+    private static  <E>String serialize(  E object) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(
                 byteArrayOutputStream);

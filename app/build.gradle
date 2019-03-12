@@ -6,11 +6,12 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.yusong.languagechangeabledemo"
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "zh"
     }
     buildTypes {
         release {

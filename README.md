@@ -18,7 +18,7 @@ allprojects {
 #### 2. 在modle的gradle中添加依赖
 ```groovy
 dependencies {
-	        implementation 'com.github.feisher:LanguageChangeableDemo:1.0.0'
+	        implementation 'com.github.feisher:LanguageChangeableDemo:v1.1.0'
     		//注意上面jitpack版本号，
 	}
 ```
